@@ -1,9 +1,11 @@
 backend:
   image: registry.relizahub.com/8c86c264-f905-42b0-9869-d6f6a6e59b8f-private/rebom-backend
   replicaCount: 1
+  regcred: none
 frontend:
   image: registry.relizahub.com/8c86c264-f905-42b0-9869-d6f6a6e59b8f-private/rebom-frontend
   replicaCount: 1
+  regcred: none
 postgresql:
   image: postgres:14.1
   defaultSecret: true
@@ -15,3 +17,6 @@ ingress:
   minimalIngressEnabled: true
   traefikEnabled: false
   host: localhost
+
+ecr-regcred:
+  enabled: false
