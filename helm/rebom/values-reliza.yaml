@@ -1,4 +1,14 @@
+backend:
+  regcred: regcred
+frontend:
+  regcred: regcred
 ingress:
   minimalIngressEnabled: true
   traefikEnabled: true
   host: $RELIZA{PROPERTY.FQDN}
+ecr-regcred:
+  enabled: true
+  registry_server: registry.relizahub.com/8c86c264-f905-42b0-9869-d6f6a6e59b8f-private
+  create_secret_in_chart: sealed
+  registry_login: $RELIZA{SECRET.rebom_registry_login}
+  registry_token: $RELIZA{SECRET.rebom_registry_token}
